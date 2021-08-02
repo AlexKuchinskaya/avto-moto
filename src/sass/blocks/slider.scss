@@ -1,0 +1,42 @@
+.slider {
+    width: 100%;
+    max-width: 600px;
+}
+
+.slider__photo {
+    display: block;
+}
+
+.slider__wrapper, .slider__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slider__list {
+    justify-content: start;
+    width: 435px;
+}
+
+.slider__item {
+    margin-right: 25px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.slider__button {
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    border: 1px solid $border-grey;
+    position: relative;
+}
+
+.slder__arrow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
