@@ -7,7 +7,7 @@ const Header = ({activeLink}) => {
         <div className="header__wrapper">
            <Logo />
            <nav className="header__nav">
-                <ul className="list main-nav site-list">
+                <ul className="list site-list">
                     {allNavSiteLinks.map((siteLink) => {
                         return <li key={siteLink} className="site-list__item">
                         <a href="!#" className={`site-list__link ${siteLink === activeLink ? `site-list__link--active` : ``}`} data-link={siteLink}>{siteLink}</a>

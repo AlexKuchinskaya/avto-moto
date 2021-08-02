@@ -3,7 +3,8 @@ export const TRANSPORT = {
     name:  `Марпех 11`,
     price: {
         current: `2 300 000`,
-        old: `2 400 000`
+        old: `2 400 000`,
+        credit: `11 000`,
     },
     paremetres: {
         fuel: `бензин`,

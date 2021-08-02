@@ -1,10 +1,11 @@
 import Main from '../main/main';
+import { TRANSPORT } from '../mocks/details';
 
 
 const App = () =>  {
   return (
     <>
-        <Main />
+        <Main  details={TRANSPORT}/>
     </>
   );
 }

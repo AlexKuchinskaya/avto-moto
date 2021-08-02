@@ -3,13 +3,13 @@ import Footer from "../footer/footer";
 import Header from "../header/header";
 
 
-const Main = () => {
+const Main = ({details}) => {
     return <>
       <Header />
       <main className="main">
         <div className="main__inner">
           <h1 className="visually-hidden">Avto Moto</h1>
-          {/* <Details /> */}
+          <Details details={details}/>
           {/* <Slider slides={ slides } />
           <Content chars={ chars } />
           <Modal /> */}
