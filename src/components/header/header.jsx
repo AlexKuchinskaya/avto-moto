@@ -8,11 +8,11 @@ const Header = ({activeLink}) => {
            <Logo />
            <nav className="header__nav">
                 <ul className="list main-nav site-list">
-                {allNavSiteLinks.map((siteLink) => {
-                    return <li key={siteLink} className="site-list__item">
-                    <a href="!#" className={`site-list__link ${siteLink === activeLink ? `site-list__link--active` : ``}`} data-link={siteLink}>{siteLink}</a>
-                    </li>;
-                })}
+                    {allNavSiteLinks.map((siteLink) => {
+                        return <li key={siteLink} className="site-list__item">
+                        <a href="!#" className={`site-list__link ${siteLink === activeLink ? `site-list__link--active` : ``}`} data-link={siteLink}>{siteLink}</a>
+                        </li>;
+                    })}
                 </ul>
           </nav>
         </div>

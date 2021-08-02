@@ -1,1 +1,2 @@
 export const allNavSiteLinks = [`Автомобили`, `Контакты`, `Услуги`, `Вакансии`];
+export const footerNavLinksList = [`Корпоративным клиентам`, `Клиентам`, `Аренда авто`, `Каршеринг`, `Как продать авто`, `Trade-in`, `Test drive`];

@@ -1,0 +1,19 @@
+.site-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 520px;
+}
+
+.site-list__item {
+    margin-right: 68px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+.site-list__link {
+    font-weight: 600;
+    font-family: "OpenSans", Arial, sans-serif;
+    text-decoration: none;
+    color: $basic-black;
+}

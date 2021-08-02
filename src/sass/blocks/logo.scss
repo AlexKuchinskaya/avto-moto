@@ -1,0 +1,23 @@
+.logo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.logo__picture {
+    margin-right: 19px;
+}
+
+.logo__subtitle, .logo__title, .logo__picture {
+    display: block;
+    color: $basic-black;
+    font-size: 18px;
+    line-height: 24.51px;
+    font-weight: 700;
+}
+
+.logo__subtitle {
+    font-size: 14px;
+    line-height: 19.07spx;
+    font-weight: 600;
+}

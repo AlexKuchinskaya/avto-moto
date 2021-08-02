@@ -2,7 +2,11 @@
 @import "variables.scss";
 @import "global.scss";
 @import "visually-hidden.scss";
-// @import "container.scss"; 
-@import "blocks/header.scss";
 @import "list.scss";
 @import "title.scss";
+@import "container-site.scss"; 
+@import "blocks/header.scss";
+@import "blocks/logo.scss";
+@import "blocks/site-list.scss";
+@import "blocks/footer.scss";
+@import "blocks/details.scss";

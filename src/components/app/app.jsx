@@ -1,17 +1,10 @@
-import Header from '../header/header';
-// import Main from '../main/main';
-// import Footer from '../footer/footer';
+import Main from '../main/main';
+
 
 const App = () =>  {
   return (
     <>
-      <Header />
-      {/* <Main
-        slides={ slides }
-        chars={ chars }
-        details={ details }
-      />
-      <Footer /> */}
+        <Main />
     </>
   );
 }
