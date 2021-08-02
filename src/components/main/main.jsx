@@ -10,8 +10,9 @@ const Main = ({transport}) => {
       <main className="main">
         <div className="main__inner">
           <h1 className="visually-hidden">Avto Moto</h1>
-          <Details details={transport}/>
           <Slider slides={transport} />
+          <Details details={transport}/>
+          
           {/* 
           <Content chars={ chars } />
           <Modal /> */}
