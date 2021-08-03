@@ -1,0 +1,19 @@
+.tabs__list {
+    display: flex;
+}
+
+.tabs__item {
+    box-sizing: border-box;
+    text-align: center;
+    padding-top: 11px;
+    padding-bottom: 14px;
+    width: 195px;
+    border: 1px solid $border-grey;
+    font-size: 20px;
+    line-height: 27.24px;
+
+    &--current {
+        color: white;
+        background-color: $basic-red;
+    }
+}
