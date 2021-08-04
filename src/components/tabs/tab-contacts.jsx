@@ -23,12 +23,10 @@ const TabContacts = () => {
         </ul>
         <div className="contacts__map">
             <img src={map} width="431" height="271" alt="Карта с месторасположением"></img>
-            {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.8301744005787!2d30.31430331609816!3d59.96814048188694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696315bcebbd7f3%3A0xe0d833dfef898281!2sNaberezhnaya%20Reki%20Karpovki%2C%205%2C%20Sankt-Peterburg%2C%20Russia%2C%20197022!5e0!3m2!1sen!2ses!4v1628031355340!5m2!1sen!2ses" width="431" height="271" style={{border:0}} loading="lazy" title="Карта с месторасположением Cat Energy. Санкт-Петербург,набережная реки Карповки, дом 5"></iframe> */}
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.8301744005787!2d30.31430331609816!3d59.96814048188694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696315bcebbd7f3%3A0xe0d833dfef898281!2sNaberezhnaya%20Reki%20Karpovki%2C%205%2C%20Sankt-Peterburg%2C%20Russia%2C%20197022!5e0!3m2!1sen!2ses!4v1628031355340!5m2!1sen!2ses" width="431" height="271" style={{border:0}} loading="lazy" title="Карта с месторасположением Cat Energy. Санкт-Петербург,набережная реки Карповки, дом 5"></iframe>
         </div>
     </div>
     )
 };
   
-
-  
-  export default TabContacts;
+export default TabContacts;

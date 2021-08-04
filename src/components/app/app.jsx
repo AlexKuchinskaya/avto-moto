@@ -1,5 +1,5 @@
 import Main from '../main/main';
-import { TRANSPORT } from '../mocks/details';
+import { TRANSPORT } from '../mocks/mock';
 
 
 const App = () =>  {

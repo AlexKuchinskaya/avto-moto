@@ -1,11 +1,16 @@
+import { calculateDifference } from '../../utils/date-difference';
+import ReviewRating from './review-rating';
 const TabReviews = ({reviewsData}) => {
     const {reviews} = reviewsData
+    console.log(`reviews`, reviews)
+    console.log(`reviews.date`, reviews.date)
+    calculateDifference(reviews[0].date)
     return (
         <div className="reviews">
             <h2 className="visually-hidden">Отзывы</h2>
             <ul className="list reviews__list feedback">
                 {reviews.map((review) => {
-                    return(
+                    return (
                         <li className="reviews__item feedback__item">
                             <h3 className="title feedback__user">{review.user}</h3>
                             <div className="feedback__characteristics feedback__characteristics--plus">
@@ -20,8 +25,8 @@ const TabReviews = ({reviewsData}) => {
                                 <h4 className="title feedback__title">Комментарий</h4>
                                 <p className="feedback__description">{review.comment}</p>
                             </div>
-                            <div>Rating</div>
-                            <div className="">
+                            <ReviewRating reviewRating={review.rating}/>
+                            <div className="feedback__final">
                                 <span className="feedback__datetime">{`${review.date} назад`}</span>
                                 <button className="feedback__response">Ответить</button>
                             </div>

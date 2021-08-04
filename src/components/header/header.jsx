@@ -1,4 +1,4 @@
-import {allNavSiteLinks} from '../const/const';
+import {allNavSiteLinks} from '../../const/const';
 import Logo from '../logo/logo';
 
 const Header = ({activeLink}) => {

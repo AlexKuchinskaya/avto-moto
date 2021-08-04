@@ -1,4 +1,4 @@
-import {footerNavLinksList} from '../const/const';
+import {footerNavLinksList} from '../../const/const';
 
 const Footer = () => {
     return <>

@@ -53,7 +53,6 @@
 
 .feedback__comment {
     margin-top: 15px;
-    margin-bottom: 20px;
 }
 
 .feedback__response {
@@ -63,33 +62,4 @@
     line-height: 21.79px;
     background: transparent;
     cursor: pointer;
-}
-
-.feedback__star {
-    display: inline-block;
-    margin-right: 5px;
-    width: 17px;
-    height: 17px;
-    background-image: url("../../img/star.svg");
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    &:last-child {
-        margin-right: 0;
-    }
-    &--active {
-        background-image: url("../../img/star-active.svg");
-    }
-}
-
-.feedback__result {
-    display: inline-block;
-    margin-left: 20px;
-    font-size: 15px;
-    color: $basic-red;
-    line-height: 20.43px;
-    vertical-align: middle;
-}
-
-.feedback__final {
-    margin-top: 30px
 }
