@@ -1,0 +1,19 @@
+.reviews__button {
+    cursor: pointer;
+    background-color: transparent;
+    color: $basic-red;
+    text-transform: uppercase;
+    border: 1px solid $basic-red;
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.reviews__item {
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

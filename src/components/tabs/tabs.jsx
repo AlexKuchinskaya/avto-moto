@@ -19,9 +19,6 @@ const Tabs = ({children}) => {
                         >{tab.props.label}
                     </li>
                 })}
-                {/* <li className="tabs__item tabs__item--current">Характеристики</li>
-                <li className="tabs__item">Отзывы</li>
-                <li className="tabs__item">Контакты</li> */}
             </ul>
             <div className="tabs__content">
                 {children.map((child) => {

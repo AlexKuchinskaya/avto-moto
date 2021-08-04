@@ -4,6 +4,7 @@ import Header from "../header/header";
 import Slider from "../slider/slider";
 import TabCharacteristics from "../tabs/tab-characteristics";
 import TabContacts from "../tabs/tab-contacts";
+import TabReviews from "../tabs/tab-reviews";
 import Tabs from "../tabs/tabs";
 
 
@@ -16,12 +17,11 @@ const Main = ({transport}) => {
           <Slider slides={transport} />
           <Details details={transport}/>
           <Tabs>
-                <div className="characteristics" label="Характеристики">
-                <TabCharacteristics characteristicsData={transport} />
+                <div label="Характеристики">
+                  <TabCharacteristics characteristicsData={transport} />
                 </div>
-                <div label="Tab3">
-                    <h2>Tab3</h2>
-                    <p>Helloooooo</p>
+                <div label="Отзывы">
+                    <TabReviews reviewsData={transport}/>
                 </div> 
                 <div label="Контакты">
                     <TabContacts />
