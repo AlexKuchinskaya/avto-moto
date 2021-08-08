@@ -1,0 +1,64 @@
+.form-review {
+    width: 630px;
+}
+.form-review__title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 47px;
+    line-height: 34.05px;
+}
+
+.form-review__container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+.form-rieview__features {
+    margin-bottom: 16px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.form-review__input, .form-review__comments {
+    position: relative;
+    box-sizing: border-box;
+    width: 300px;
+    padding: 15px 0;
+    padding-left: 25px;
+    border: 1px solid rgba(72, 73, 77, 0.2);
+    font-size: 14px;
+    line-height: 19.07px;
+  }
+  
+.form-review__input::placeholder,
+.form-review__comments::placeholder {
+    font-size: 14px;
+    line-height: 19.07px;
+    color: $basic-black;
+    font-family: "OpenSans", Arial, sans-serif;
+}
+
+.form-review__comments {
+    display: block;
+    min-height: 118px;
+    resize: none;
+}
+
+.form-review__button {
+    display: block;
+    text-align: center;
+    width: 190px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    background-color: $basic-red;
+    border: 1px solid $basic-red;
+    color: $basic-white;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+}

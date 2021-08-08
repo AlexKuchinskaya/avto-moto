@@ -1,10 +1,22 @@
+import { useState } from "react";
 import { calculateDifference } from '../../utils/date-difference';
+import FormReviewModal from "../form-review-modal/form-review-modal";
 import ReviewRating from './review-rating';
 const TabReviews = ({reviewsData}) => {
     const {reviews} = reviewsData
     console.log(`reviews`, reviews)
     console.log(`reviews.date`, reviews.date)
     calculateDifference(reviews[0].date)
+    const [isModalOpened, setIsModalOpened] = useState(false)
+    const showModal = () => {
+        console.log(`hi`)
+        setIsModalOpened(true);
+      };
+    
+    const hideModal = () => {
+        setIsModalOpened(false);
+    };
+    
     return (
         <div className="reviews">
             <h2 className="visually-hidden">Отзывы</h2>
@@ -34,7 +46,8 @@ const TabReviews = ({reviewsData}) => {
                     )
                 })}
             </ul>
-            <button className="reviews__button">оставить отзыв</button>
+            {isModalOpened ? <FormReviewModal closeModal={hideModal}/> : null }
+            <button className="reviews__button" onClick={showModal}>оставить отзыв</button>
         </div>
     )
 }
