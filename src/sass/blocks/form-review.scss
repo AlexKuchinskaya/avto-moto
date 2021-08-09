@@ -21,6 +21,18 @@
     }
 }
 
+.form-review__required {
+    position: relative;
+    // border-color: $basic-red;
+    &::before {
+        z-index: 10;
+        content: "*";
+        color: $basic-red;
+        position: absolute;
+        top: 10px;
+        left: 12px;
+    }
+}
 .form-review__input, .form-review__comments {
     position: relative;
     box-sizing: border-box;

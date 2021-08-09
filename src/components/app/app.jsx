@@ -1,13 +1,14 @@
+import React from 'react';
 import Main from '../main/main';
-import { TRANSPORT } from '../mocks/mock';
+import {TRANSPORT} from '../mocks/mock';
 
 
-const App = () =>  {
+const App = () => {
   return (
     <>
-        <Main  transport={TRANSPORT}/>
+      <Main transport={TRANSPORT}/>
     </>
   );
-}
+};
 
 export default App;
