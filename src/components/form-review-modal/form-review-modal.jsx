@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {addReview} from "../../store/action";
 import React from 'react';
 import PropTypes from 'prop-types';
+import FormRating from "../form-rating/form-rating";
 const FormReviewModal = ({closeModal}) => {
   const ESC_KEY = `Escape`;
   const formRef = useRef();
@@ -28,6 +29,14 @@ const FormReviewModal = ({closeModal}) => {
       [evt.target.name]: evt.target.value,
     });
     // console.log(`evt.target.value`, evt.target.value);
+  };
+
+  const handleFormRatingInput = (evt) => {
+    setCurrentFormState({
+      ...currentFormState,
+      rating: parseInt(evt.target.value, 10),
+    });
+    // console.log(`currentFormState.rating`, currentFormState.rating)
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -114,9 +123,9 @@ const FormReviewModal = ({closeModal}) => {
               </div>
             </div>
             <div className="form-review__wrapper">
-              <div className="form-review__rating">
-                <span className="form-review__label">Оцените товар:</span>
-                {/* <RatingForm rating={rating} onChangeRating={changeRating}/> */}
+              <div className="form-review__rating rating">
+                <span className="form-review__label rating__label">Оцените товар:</span>
+                <FormRating ratingValue={currentFormState.rating} handleFormRatingInput={handleFormRatingInput}/>
               </div>
               <div className="form-review__textarea form-review__required">
                 <label htmlFor="comments"></label>

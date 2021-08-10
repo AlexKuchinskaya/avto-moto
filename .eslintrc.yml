@@ -5,6 +5,10 @@ env:
 
 extends: ['htmlacademy/es6', 'plugin:react/recommended']
 
+rules: {
+    "no-console": false
+},
+
 parserOptions:
   ecmaFeatures:
     jsx: true

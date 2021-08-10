@@ -1,0 +1,21 @@
+.rating__input {
+    appearance: none;
+}
+.rating__star {
+    display: inline-block;
+    margin-right: 5px;
+    width: 17px;
+    height: 17px;
+    vertical-align: middle;
+    &:last-child {
+        margin-right: 0;
+    }
+    path {
+        fill: #CECFD3;
+    }
+    &--active {
+        path {
+            fill: $basic-red;
+        }
+    }
+}
