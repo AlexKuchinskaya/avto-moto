@@ -9,7 +9,7 @@ const FormRating = ({ratingValue, handleFormRatingInput}) => {
     <div className="rating__stars">
       {STARS_RATING.map((ratingNumber, index) =>
         <React.Fragment key={`${index}-${ratingNumber}`}>
-          <label className="rating__label" htmlFor={`star-${ratingNumber}`}>
+          <label className="rating__container" htmlFor={`star-${ratingNumber}`}>
             <input
               onChange={handleFormRatingInput}
               className="rating__input"

@@ -20,11 +20,11 @@ const Details = ({details}) => {
         })}
       </ul>
       <div className="details__costs">
-        <span className="details__price-current">{price.current} ₽</span>
-        <span className="details__price-old">{price.old} ₽</span>
+        <span className="details__price-current">{`${price.current} ₽`}</span>
+        <span className="details__price-old">{`${price.old} ₽`}</span>
       </div>
       <button className="details__button" type="button">Оставить заявку</button>
-      <button className="details__button details__button--credit" type="button">В кредит от {price.credit}</button>
+      <button className="details__button details__button--credit" type="button">{`В кредит от ${price.credit} ₽`}</button>
     </section>
   </>;
 };

@@ -3,4 +3,9 @@
     max-width: $desktop-width;
     margin: 0 auto;
     padding: 0 10px;
+    @media (min-width: $desktop-width-large) {
+        padding: 0;
+        max-width: none;
+        width: 1177px;
+    }
 }

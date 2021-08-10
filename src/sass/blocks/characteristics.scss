@@ -1,6 +1,9 @@
+.characteristics {
+    padding-top: 10px;
+}
 .characteristics__table {
     width: 100%;
-    max-width: 565px;
+    max-width: 570px;
 }
 .characteristics__table {
     tr {
@@ -8,8 +11,12 @@
         justify-content: space-between;
         border-bottom: 1px solid $border-grey;
         width: auto;
-        padding-top: 20px;
+        padding-top: 18px;
         padding-bottom: 8px;
+        letter-spacing: 0.4px;
+        // td {
+        //     width:
+        // }
     }
 }
 

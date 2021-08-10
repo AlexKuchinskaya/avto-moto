@@ -1,15 +1,31 @@
-.rating__input {
-    appearance: none;
+.rating {
+    display: flex;
+    align-items: center;
 }
-.rating__star {
-    display: inline-block;
-    margin-right: 5px;
-    width: 17px;
-    height: 17px;
-    vertical-align: middle;
+.rating__input {
+    display: none;
+}
+
+.rating__container {
+    margin-right: 8px;
     &:last-child {
         margin-right: 0;
     }
+}
+.rating__label {
+    display: block;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 20.43px;
+    color: $classic-black;
+    margin-right: 14px;
+}
+
+.rating__star {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    vertical-align: middle;
     path {
         fill: #CECFD3;
     }

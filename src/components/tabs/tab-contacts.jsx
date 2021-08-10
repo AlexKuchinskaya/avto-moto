@@ -6,8 +6,8 @@ const TabContacts = () => {
       <h2 className="visually-hidden">Контакты</h2>
       <ul className="list contacts__list">
         <li className="contacts__item">
-          <h3 className="title contacts__title">Адрес</h3>
-          <p className="contacts__description">Санкт-Петербург, <br/> набережная реки Карповки, дом 5</p>
+          <h3 className="title contacts__title contacts__title--address">Адрес</h3>
+          <p className="contacts__description contacts__description--address">Санкт-Петербург, <br/> набережная реки Карповки, дом 5</p>
         </li>
         <li className="contacts__item">
           <h3 className="title contacts__title">Режим работы</h3>

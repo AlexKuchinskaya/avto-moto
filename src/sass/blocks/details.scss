@@ -1,14 +1,17 @@
 .details__title {
    margin: 0;
    padding: 0;
-   margin-bottom: 19px;
+   margin-bottom: 21px;
+   font-size: 30px;
+   line-height: 40.85px;
+   letter-spacing: 1.4px;
 }
 
 .details__button {
     display: block;
     background-color: $basic-red;
     color: $basic-white;
-    padding: 16px 20px;
+    padding: 16px 11px;
     font-size: 14px;
     color: $basic-white;
     font-weight: 600;
@@ -21,6 +24,13 @@
     cursor: pointer;
     width: 196px;
     margin-bottom: 16px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: $hover-red;
+        border-color: $hover-red;
+    }
 
     &--credit {
         background-color: $basic-white;
@@ -28,19 +38,27 @@
         border: 1px solid $basic-red;
         width: 222px;
         margin-bottom: 0;
+        &:hover {
+            color: $basic-white;
+            background-color: $basic-red;
+            border-color: $basic-red;
+        }
     }
 }
 
 .details__list {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: 310px;
-    margin-bottom: 19px;
+    width: 312px;
+    margin-bottom: 40px;
     color: $light-grey;
 }
 
 .details__item {
-    margin-right: 7px;
+    width: 73px;
+    text-align: center;
+    // margin-right: 7px;
     &:last-child {
         margin-right: 0;
     }
@@ -67,7 +85,7 @@
     font-size: 35px;
     line-height: 47.66px;
     font-weight: 700;
-    margin-right: 30px;
+    margin-right: 38px;
 }
 
 .details__price-old {
@@ -75,6 +93,7 @@
     line-height: 27.24px;
     color: $light-grey;
     position: relative;
+    letter-spacing: 1px;
 
     &::after {
         content:"";

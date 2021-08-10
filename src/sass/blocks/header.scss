@@ -1,5 +1,6 @@
 .header {
     background-color: $light-blue;
+    width: 100%;
 }
 
 .header__wrapper {
@@ -7,8 +8,14 @@
     align-items: center;
     justify-content: space-between;
     min-height: 84px;
-    padding: 15px 0;
-    max-width: $desktop-width;
-    margin: 0 auto;
-    align-items: center;
+    padding: 15px 14px;
+    box-sizing: border-box;
+    @media (min-width: $desktop-width-large) {
+        padding-right: 4px;
+        padding-left: 4px;
+    }
+}
+
+.header__nav {
+    width: 520px;
 }

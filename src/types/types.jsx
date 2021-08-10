@@ -25,7 +25,7 @@ export const TransportPropType = PropTypes.shape({
     user: PropTypes.string.isRequired,
     pros: PropTypes.string.isRequired,
     cons: PropTypes.string.isRequired,
-    rating: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
     comment: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired
   }))

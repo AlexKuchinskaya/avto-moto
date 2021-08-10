@@ -2,11 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    max-width: 520px;
+    width: 100%;
 }
 
 .site-list__item {
-    margin-right: 68px;
+    margin-right: 72px;
     &:last-child {
         margin-right: 0;
     }

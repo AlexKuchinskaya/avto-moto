@@ -9,7 +9,6 @@ const Slider = ({slides}) => {
 
   const handleNext = () => {
     if (count < pictures.length - 1) {
-    //   console.log(`count next`, count);
       setCount((prevCount) => prevCount + 1);
     }
   };

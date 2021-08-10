@@ -15,8 +15,8 @@ const FormReviewModal = ({closeModal}) => {
     rating: 0,
     comment: ``,
     date: new Date()
-
   });
+  console.log(`currentFormState.rating 0`, currentFormState.rating);
   let handleMousedownForm = (evt) => {
     if (!formRef.current.contains(evt.target)) {
       closeModal();
@@ -36,7 +36,7 @@ const FormReviewModal = ({closeModal}) => {
       ...currentFormState,
       rating: parseInt(evt.target.value, 10),
     });
-    // console.log(`currentFormState.rating`, currentFormState.rating)
+    console.log(`currentFormState.rating`, currentFormState.rating);
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -50,16 +50,16 @@ const FormReviewModal = ({closeModal}) => {
       closeModal();
     }
   };
-  useEffect(() => {
-    const data = localStorage.getItem(`myValueInLocalStorage`);
-    if (data) {
-      setCurrentFormState(JSON.stringify(currentFormState));
-    }
-  }, []);
+  // useEffect(() => {
+  //   const data = localStorage.getItem(`myValueInLocalStorage`);
+  //   if (data) {
+  //     setCurrentFormState(JSON.stringify(currentFormState));
+  //   }
+  // }, []);
 
-  useEffect(() => {
-    localStorage.setItem(`myValueInLocalStorage`, JSON.stringify(currentFormState));
-  });
+  // useEffect(() => {
+  //   localStorage.setItem(`myValueInLocalStorage`, JSON.stringify(currentFormState));
+  // });
 
   useEffect(() => {
     document.addEventListener(`keydown`, handleEscapeKeyForm);
