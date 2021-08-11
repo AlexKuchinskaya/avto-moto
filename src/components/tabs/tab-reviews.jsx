@@ -41,7 +41,7 @@ const TabReviews = ({reviewsData}) => {
               </div>
               <ReviewRating reviewRating={review.rating}/>
               <div className="feedback__final">
-                <span className="feedback__datetime">{`${review.date} назад`}</span>
+                <span className="feedback__datetime">{`${review.date} минуту назад`}</span>
                 <button className="feedback__response">Ответить</button>
               </div>
             </li>

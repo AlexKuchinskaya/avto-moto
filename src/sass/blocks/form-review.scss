@@ -12,8 +12,16 @@
 .form-review__container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 35px;
 }
+
+.form-review__wrapper {
+    &--column {
+        padding-top: 10px;
+    }
+}
+
 .form-rieview__features {
     margin-bottom: 16px;
     &:last-child {
@@ -24,6 +32,7 @@
 .form-review__textarea {
     margin-top: 33px;
 }
+
 .form-review__required {
     position: relative;
     // border-color: $basic-red;
@@ -34,6 +43,20 @@
         position: absolute;
         top: 10px;
         left: 12px;
+    }
+    &--active {
+        &::after {
+            position: absolute;
+            display: block;
+            top: -20px;
+            left: 0;
+            content: "Пожалуйста, заполните поле";
+            color: $bright-red;
+            font-size: 14px;
+            line-height: 19.07px;
+            font-weight: 400;
+            z-index: 30;
+        }
     }
 }
 .form-review__input, .form-review__comments {
@@ -55,6 +78,11 @@
     font-family: "OpenSans", Arial, sans-serif;
 }
 
+.form-review__input {
+    &--focused {
+        border-color: $bright-red;
+    }
+}
 .form-review__comments {
     display: block;
     min-height: 118px;

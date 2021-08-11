@@ -5,17 +5,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FormRating from "../form-rating/form-rating";
 const FormReviewModal = ({closeModal}) => {
+  let userData;
   const ESC_KEY = `Escape`;
   const formRef = useRef();
-  // const [focused, setFocused] = useState(false);
-  const [currentFormState, setCurrentFormState] = useState({
+  const [focused, setFocused] = useState(false);
+  const initialFormState = {
     user: ``,
     pros: ``,
     cons: ``,
     rating: 0,
     comment: ``,
-    date: new Date()
-  });
+    date: `1`
+  };
+
+  const [currentFormState, setCurrentFormState] = useState({...initialFormState});
+
   console.log(`currentFormState.rating 0`, currentFormState.rating);
   let handleMousedownForm = (evt) => {
     if (!formRef.current.contains(evt.target)) {
@@ -28,7 +32,6 @@ const FormReviewModal = ({closeModal}) => {
       ...currentFormState,
       [evt.target.name]: evt.target.value,
     });
-    // console.log(`evt.target.value`, evt.target.value);
   };
 
   const handleFormRatingInput = (evt) => {
@@ -40,26 +43,45 @@ const FormReviewModal = ({closeModal}) => {
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    // console.group(`hello handle sub,it`);
-    // console.log(`currentFormState`, currentFormState);
-    addReview(currentFormState);
-    closeModal();
+    console.log(`currentFormState.user.length`, currentFormState.user.length);
+    console.log(`focused`, focused);
+    if (currentFormState.user.length === 0 || currentFormState.comment.length === 0) {
+      console.log(`hola`);
+      setFocused(true);
+    } else {
+      addReview(currentFormState);
+      setCurrentFormState({
+        ...initialFormState,
+      });
+      closeModal();
+    }
+
   };
   const handleEscapeKeyForm = (evt) => {
     if (evt.key === ESC_KEY) {
       closeModal();
     }
   };
-  // useEffect(() => {
-  //   const data = localStorage.getItem(`myValueInLocalStorage`);
-  //   if (data) {
-  //     setCurrentFormState(JSON.stringify(currentFormState));
-  //   }
-  // }, []);
 
-  // useEffect(() => {
-  //   localStorage.setItem(`myValueInLocalStorage`, JSON.stringify(currentFormState));
-  // });
+  useEffect(() => {
+    userData = JSON.parse(localStorage.getItem(`myValueInLocalStorage`));
+    if (localStorage.getItem(`myValueInLocalStorage`)) {
+      setCurrentFormState({
+        user: userData.user,
+        pros: userData.pros,
+        cons: userData.cons,
+        rating: userData.rating,
+        comment: userData.comment,
+        date: `1`,
+      });
+    } else {
+      setCurrentFormState({...initialFormState});
+    }
+  }, [userData]);
+
+  useEffect(() => {
+    localStorage.setItem(`myValueInLocalStorage`, JSON.stringify(currentFormState));
+  });
 
   useEffect(() => {
     document.addEventListener(`keydown`, handleEscapeKeyForm);
@@ -80,17 +102,16 @@ const FormReviewModal = ({closeModal}) => {
         >
           <div className="form-review__container">
             <div className="form-review__wrapper">
-              <div className="form-rieview__features form-review__required">
-                {/* <span className={ formState.isFormValid || formState.name.length > 0 ? `visually-hidden` : `form-review__error` } >Пожалуйста, заполните поле</span> */}
+              <div className={`form-rieview__features form-review__required ${focused ? `form-review__required--active` : ``}`}>
                 <label htmlFor="userName"></label>
                 <input
-                  className="form-review__input "
+                  className={`form-review__input ${focused ? `form-review__input--focused` : ``}`}
                   id="userName"
                   type="text"
                   name="user"
                   // autoFocus={true}
                   placeholder="Имя"
-                  required
+                  // required
                   // onFocus={() => setFocused(true)}
                   value={currentFormState.user}
                   onChange={handleInputChange}
@@ -122,21 +143,20 @@ const FormReviewModal = ({closeModal}) => {
                 />
               </div>
             </div>
-            <div className="form-review__wrapper">
+            <div className="form-review__wrapper form-review__wrapper--column">
               <div className="form-review__rating rating">
                 <span className="form-review__label rating__label">Оцените товар:</span>
                 <FormRating ratingValue={currentFormState.rating} handleFormRatingInput={handleFormRatingInput}/>
               </div>
-              <div className="form-review__textarea form-review__required">
+              <div className={`form-review__textarea form-review__required ${focused ? `form-review__required--active` : ``}`}>
                 <label htmlFor="comments"></label>
                 <textarea
-                  className="form-review__comments"
+                  className={`form-review__comments ${focused ? `form-review__input--focused` : ``}`}
                   id="comments"
                   placeholder="Комментарий"
                   name="comment"
                   value={currentFormState.comment}
                   onChange={handleInputChange}
-                  required
                 />
               </div>
             </div>
@@ -144,7 +164,6 @@ const FormReviewModal = ({closeModal}) => {
           <button
             className="form-review__button"
             type="submit"
-            // onClick={(evt) => this.sendReviewHandler(evt)}
           >оставить отзыв
           </button>
         </form>
@@ -159,13 +178,9 @@ const FormReviewModal = ({closeModal}) => {
     </div>
   </>;
 };
-// const mapDispatchToProps = {
-//   addReview
-// };
 
 FormReviewModal.propTypes = {
   closeModal: PropTypes.func.isRequired,
-  addReview: PropTypes.func.isRequired,
 };
 
 export {FormReviewModal};

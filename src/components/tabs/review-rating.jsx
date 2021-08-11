@@ -8,7 +8,7 @@ const ReviewRating = ({reviewRating}) => {
     <div className="feedback__rating">
       {STARS_RATING.map((star) => {
         return <>
-          <div key={star} className={`feedback__star ${star <= reviewRating ? `feedback__star--active` : ``}`}></div>
+          <div className={`feedback__star ${star <= reviewRating ? `feedback__star--active` : ``}`}></div>
         </>;
       })}
       <span className="feedback__result">{checkRating(reviewRating)}</span>
@@ -18,7 +18,7 @@ const ReviewRating = ({reviewRating}) => {
 };
 
 ReviewRating.propTypes = {
-  reviewRating: PropTypes.string.isRequired
+  reviewRating: PropTypes.number.isRequired
 };
 
 export default ReviewRating;

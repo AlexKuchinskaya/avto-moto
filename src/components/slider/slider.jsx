@@ -39,7 +39,7 @@ const Slider = ({slides}) => {
         </div>
         <ul className="list slider__list">
           {pictures.map((picture) => {
-            return <li key={picture} className="slider__item">
+            return <li key={picture.url} className="slider__item">
               <img
                 src={picture.url}
                 alt={picture.name}
