@@ -20,7 +20,6 @@ const FormReviewModal = ({closeModal}) => {
 
   const [currentFormState, setCurrentFormState] = useState({...initialFormState});
 
-  console.log(`currentFormState.rating 0`, currentFormState.rating);
   let handleMousedownForm = (evt) => {
     if (!formRef.current.contains(evt.target)) {
       closeModal();
@@ -39,14 +38,10 @@ const FormReviewModal = ({closeModal}) => {
       ...currentFormState,
       rating: parseInt(evt.target.value, 10),
     });
-    console.log(`currentFormState.rating`, currentFormState.rating);
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log(`currentFormState.user.length`, currentFormState.user.length);
-    console.log(`focused`, focused);
     if (currentFormState.user.length === 0 || currentFormState.comment.length === 0) {
-      console.log(`hola`);
       setFocused(true);
     } else {
       addReview(currentFormState);
@@ -109,10 +104,9 @@ const FormReviewModal = ({closeModal}) => {
                   id="userName"
                   type="text"
                   name="user"
-                  // autoFocus={true}
+                  autoFocus={true}
                   placeholder="Имя"
-                  // required
-                  // onFocus={() => setFocused(true)}
+                  onFocus={() => setFocused(true)}
                   value={currentFormState.user}
                   onChange={handleInputChange}
                 />

@@ -3,8 +3,6 @@ import {STARS_RATING} from "../../const/const";
 import PropTypes from 'prop-types';
 
 const FormRating = ({ratingValue, handleFormRatingInput}) => {
-  // eslint-disable-next-line no-console
-  console.log(`ratingValue`, ratingValue);
   return <>
     <div className="rating__stars">
       {STARS_RATING.map((ratingNumber, index) =>

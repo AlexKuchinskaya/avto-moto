@@ -6,12 +6,9 @@ import FormReviewModal from "../form-review-modal/form-review-modal";
 import ReviewRating from './review-rating';
 const TabReviews = ({reviewsData}) => {
   const {reviews} = reviewsData;
-  //   console.log(`reviews`, reviews);
-  //   console.log(`reviews.date`, reviews.date);
   calculateDifference(reviews[0].date);
   const [isModalOpened, setIsModalOpened] = useState(false);
   const showModal = () => {
-    // console.log(`hi`);
     setIsModalOpened(true);
   };
 

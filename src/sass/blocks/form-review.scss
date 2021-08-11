@@ -35,7 +35,6 @@
 
 .form-review__required {
     position: relative;
-    // border-color: $basic-red;
     &::before {
         z-index: 10;
         content: "*";

@@ -10,7 +10,3 @@ export const addReview = (review) => ({
   payload: review
 });
 
-//   export const setReviews = (reviews) => ({
-//     type: ActionTypes.SET_REVIEWS,
-//     payload: reviews
-//   });
