@@ -7,8 +7,6 @@ import FormRating from "../form-rating/form-rating";
 const FormReviewModal = ({closeModal}) => {
   let userData;
   const ESC_KEY = `Escape`;
-  const formRef = useRef();
-  const [focused, setFocused] = useState(false);
   const initialFormState = {
     user: ``,
     pros: ``,
@@ -17,9 +15,18 @@ const FormReviewModal = ({closeModal}) => {
     comment: ``,
     date: `1`
   };
+  const formRef = useRef();
+  const [isUserError, setIsUserError] = useState(false);
+  const [isCommentError, setIsCommentError] = useState(false);
 
   const [currentFormState, setCurrentFormState] = useState({...initialFormState});
-
+  const checkUserNameInput = () => {
+    if (!currentFormState.user) {
+      setIsUserError(true);
+    } else {
+      setIsUserError(false);
+    }
+  };
   let handleMousedownForm = (evt) => {
     if (!formRef.current.contains(evt.target)) {
       closeModal();
@@ -41,9 +48,15 @@ const FormReviewModal = ({closeModal}) => {
   };
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    if (currentFormState.user.length === 0 || currentFormState.comment.length === 0) {
-      setFocused(true);
+    checkUserNameInput();
+
+    if (!currentFormState.comment) {
+      setIsCommentError(true);
     } else {
+      setIsCommentError(false);
+    }
+
+    if (currentFormState.user.length !== 0 && currentFormState.comment.length !== 0) {
       addReview(currentFormState);
       setCurrentFormState({
         ...initialFormState,
@@ -79,6 +92,7 @@ const FormReviewModal = ({closeModal}) => {
   });
 
   useEffect(() => {
+    checkUserNameInput();
     document.addEventListener(`keydown`, handleEscapeKeyForm);
     document.addEventListener(`mousedown`, handleMousedownForm);
     return () => {
@@ -86,7 +100,7 @@ const FormReviewModal = ({closeModal}) => {
       document.removeEventListener(`keydown`, handleEscapeKeyForm);
     };
   });
-  return <>
+  return (
     <div className="modal modal--show">
       <div ref={formRef} className="modal__main">
         <h3 className="title form-review__title">Оставьте отзыв</h3>
@@ -97,16 +111,16 @@ const FormReviewModal = ({closeModal}) => {
         >
           <div className="form-review__container">
             <div className="form-review__wrapper">
-              <div className={`form-rieview__features form-review__required ${focused ? `form-review__required--active` : ``}`}>
+              <div className={`form-rieview__features form-review__required ${isUserError ? `form-review__required--active` : ``}`}>
                 <label htmlFor="userName"></label>
                 <input
-                  className={`form-review__input ${focused ? `form-review__input--focused` : ``}`}
+                  className={`form-review__input ${isUserError ? `form-review__input--focused` : ``}`}
                   id="userName"
                   type="text"
                   name="user"
                   autoFocus={true}
                   placeholder="Имя"
-                  onFocus={() => setFocused(true)}
+                  // onFocus={() => setFocused(true)}
                   value={currentFormState.user}
                   onChange={handleInputChange}
                 />
@@ -142,10 +156,10 @@ const FormReviewModal = ({closeModal}) => {
                 <span className="form-review__label rating__label">Оцените товар:</span>
                 <FormRating ratingValue={currentFormState.rating} handleFormRatingInput={handleFormRatingInput}/>
               </div>
-              <div className={`form-review__textarea form-review__required ${focused ? `form-review__required--active` : ``}`}>
+              <div className={`form-review__textarea form-review__required ${isCommentError ? `form-review__required--active` : ``}`}>
                 <label htmlFor="comments"></label>
                 <textarea
-                  className={`form-review__comments ${focused ? `form-review__input--focused` : ``}`}
+                  className={`form-review__comments ${isCommentError ? `form-review__input--focused` : ``}`}
                   id="comments"
                   placeholder="Комментарий"
                   name="comment"
@@ -170,7 +184,7 @@ const FormReviewModal = ({closeModal}) => {
         </button>
       </div>
     </div>
-  </>;
+  );
 };
 
 FormReviewModal.propTypes = {

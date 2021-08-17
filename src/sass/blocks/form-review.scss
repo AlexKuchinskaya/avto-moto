@@ -67,7 +67,17 @@
     border: 1px solid rgba(72, 73, 77, 0.2);
     font-size: 14px;
     line-height: 19.07px;
-  }
+    &:hover {
+        background-color: $hover-red;
+        border: 1px solid $hover-red;
+    }
+}
+
+.form-review__input {
+    &--focused {
+        border-color: $bright-red;
+    }
+}
   
 .form-review__input::placeholder,
 .form-review__comments::placeholder {
@@ -77,11 +87,6 @@
     font-family: "OpenSans", Arial, sans-serif;
 }
 
-.form-review__input {
-    &--focused {
-        border-color: $bright-red;
-    }
-}
 .form-review__comments {
     display: block;
     min-height: 118px;

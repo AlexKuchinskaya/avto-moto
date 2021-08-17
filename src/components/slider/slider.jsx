@@ -19,7 +19,7 @@ const Slider = ({slides}) => {
     }
   };
 
-  return <>
+  return (
     <section className="slider">
       <h2 className="visually-hidden">Слайдер с фотографиями</h2>
       <div className="slider__photo slider__photo--new">
@@ -57,7 +57,7 @@ const Slider = ({slides}) => {
         </div>
       </div>
     </section>
-  </>;
+  );
 };
 
 Slider.propTypes = {

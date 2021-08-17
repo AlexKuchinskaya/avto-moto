@@ -3,7 +3,7 @@ import {STARS_RATING} from "../../const/const";
 import PropTypes from 'prop-types';
 
 const FormRating = ({ratingValue, handleFormRatingInput}) => {
-  return <>
+  return (
     <div className="rating__stars">
       {STARS_RATING.map((ratingNumber, index) =>
         <React.Fragment key={`${index}-${ratingNumber}`}>
@@ -24,7 +24,7 @@ const FormRating = ({ratingValue, handleFormRatingInput}) => {
         </React.Fragment>
       )}
     </div>
-  </>;
+  );
 };
 
 FormRating.propTypes = {

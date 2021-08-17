@@ -8,7 +8,7 @@ import {TransportPropType} from '../../types/types';
 const Details = ({details}) => {
   const {price, paremetres, name} = details;
   const pictures = {fuel, horsepower, volume, transmission};
-  return <>
+  return (
     <section className="details">
       <h2 className="details__title">{name}</h2>
       <ul className="list details__list">
@@ -26,7 +26,7 @@ const Details = ({details}) => {
       <button className="details__button" type="button">Оставить заявку</button>
       <button className="details__button details__button--credit" type="button">{`В кредит от ${price.credit} ₽`}</button>
     </section>
-  </>;
+  );
 };
 
 Details.propTypes = {
