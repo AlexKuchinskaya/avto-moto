@@ -21,3 +21,8 @@ body {
   color: $basic-black;
   box-sizing: border-box;
 }
+
+.body-hidden {
+  overflow: hidden;
+  position: fixed;
+}

@@ -6,14 +6,17 @@ import FormReviewModal from "../form-review-modal/form-review-modal";
 import ReviewRating from './review-rating';
 const TabReviews = ({reviewsData}) => {
   const {reviews} = reviewsData;
+  const bodyElement = document.querySelector(`body`);
   calculateDifference(reviews[0].date);
   const [isModalOpened, setIsModalOpened] = useState(false);
   const showModal = () => {
     setIsModalOpened(true);
+    bodyElement.classList.add(`body-hidden`);
   };
 
   const hideModal = () => {
     setIsModalOpened(false);
+    bodyElement.classList.remove(`body-hidden`);
   };
 
   return (

@@ -2,7 +2,7 @@ import React from 'react';
 import {STARS_RATING} from "../../const/const";
 import PropTypes from 'prop-types';
 
-const FormRating = ({ratingValue, handleFormRatingInput}) => {
+const FormRating = ({ratingValue, handleFormRatingInput, handleRatingKeyPress}) => {
   return (
     <div className="rating__stars">
       {STARS_RATING.map((ratingNumber, index) =>
@@ -10,10 +10,12 @@ const FormRating = ({ratingValue, handleFormRatingInput}) => {
           <label className="rating__container" htmlFor={`star-${ratingNumber}`}>
             <input
               onChange={handleFormRatingInput}
-              className="rating__input"
+              onKeyPress={(evt) => handleRatingKeyPress(evt)}
+              className="visually-hidden rating__input"
               id={`star-${ratingNumber}`}
               type="radio"
               name="rating"
+              tabIndex={0}
               value={ratingNumber}
               defaultChecked={ratingNumber === ratingValue ? true : false}
             />
@@ -29,6 +31,7 @@ const FormRating = ({ratingValue, handleFormRatingInput}) => {
 
 FormRating.propTypes = {
   handleFormRatingInput: PropTypes.func.isRequired,
+  handleRatingKeyPress: PropTypes.func.isRequired,
   ratingValue: PropTypes.number.isRequired,
 };
 export default FormRating;

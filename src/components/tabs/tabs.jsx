@@ -9,6 +9,15 @@ const Tabs = ({children}) => {
     evt.preventDefault();
     setActiveTab(newActiveTab);
   };
+  const handleTabKeyPress = (evt, newActiveTab) => {
+    const enterOrSpace =
+      evt.key === `Enter` ||
+      evt.key === ` ` ||
+      evt.key === `Spacebar`;
+    if (enterOrSpace) {
+      handleTabClick(evt, newActiveTab);
+    }
+  };
   return (
     <div className="tabs">
       <ul className="list tabs__list">
@@ -16,7 +25,9 @@ const Tabs = ({children}) => {
           return <li
             key={tab.props.label}
             className={`tabs__item ${tab.props.label === activeTab ? `tabs__item--current` : ``}`}
+            tabIndex="0"
             onClick={(evt) => handleTabClick(evt, tab.props.label)}
+            onKeyPress={(evt) => handleTabKeyPress(evt, tab.props.label)}
           >{tab.props.label}
           </li>;
         })}

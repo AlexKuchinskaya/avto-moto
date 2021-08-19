@@ -32,11 +32,11 @@ const Slider = ({slides}) => {
         </img>
       </div>
       <div className="slider__wrapper">
-        <div className="slider__button slider__button--previous" onClick={handlePrevious}>
+        <button className="slider__button slider__button--previous" onClick={handlePrevious}>
           <svg className={`slider__arrow ${count === ZERO ? `slider__arrow--disable` : ``}`} width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.00427 6.17188L6.91841 0.368597M1.00427 6.17188L6.69294 11.9692M1.00427 6.17188L19.9813 6.35128"/>
           </svg>
-        </div>
+        </button>
         <ul className="list slider__list">
           {pictures.map((picture) => {
             return <li key={picture.url} className="slider__item">
@@ -50,11 +50,11 @@ const Slider = ({slides}) => {
             </li>;
           })}
         </ul>
-        <div className="slider__button slider__button--next" onClick={handleNext}>
+        <button className="slider__button slider__button--next" onClick={handleNext}>
           <svg className={`slider__arrow ${count === pictures.length - 1 ? `slider__arrow--disable` : ``}`} width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M18.9873 6.17188L13.0747 0.368597M18.9873 6.17188L13.3001 11.9692M18.9873 6.17188L0.0150977 6.35128"/>
           </svg>
-        </div>
+        </button>
       </div>
     </section>
   );

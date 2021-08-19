@@ -46,6 +46,16 @@ const FormReviewModal = ({closeModal}) => {
       rating: parseInt(evt.target.value, 10),
     });
   };
+  const handleRatingKeyPress = (evt) => {
+    const enterOrSpace =
+      evt.key === `Enter` ||
+      evt.key === ` ` ||
+      evt.key === `Spacebar`;
+    if (enterOrSpace) {
+      console.log(`evt.target.value`, evt.target);
+      handleFormRatingInput(evt);
+    }
+  };
   const handleSubmit = (evt) => {
     evt.preventDefault();
     checkUserNameInput();
@@ -120,7 +130,6 @@ const FormReviewModal = ({closeModal}) => {
                   name="user"
                   autoFocus={true}
                   placeholder="Имя"
-                  // onFocus={() => setFocused(true)}
                   value={currentFormState.user}
                   onChange={handleInputChange}
                 />
@@ -154,7 +163,7 @@ const FormReviewModal = ({closeModal}) => {
             <div className="form-review__wrapper form-review__wrapper--column">
               <div className="form-review__rating rating">
                 <span className="form-review__label rating__label">Оцените товар:</span>
-                <FormRating ratingValue={currentFormState.rating} handleFormRatingInput={handleFormRatingInput}/>
+                <FormRating ratingValue={currentFormState.rating} handleFormRatingInput={handleFormRatingInput} handleRatingKeyPress={handleRatingKeyPress}/>
               </div>
               <div className={`form-review__textarea form-review__required ${isCommentError ? `form-review__required--active` : ``}`}>
                 <label htmlFor="comments"></label>
