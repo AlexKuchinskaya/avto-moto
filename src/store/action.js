@@ -7,6 +7,6 @@ export const ActionType = {
 
 export const addReview = (review) => ({
   type: ActionType.ADD_REVIEW,
-  payload: review
+  payload: review,
 });
 

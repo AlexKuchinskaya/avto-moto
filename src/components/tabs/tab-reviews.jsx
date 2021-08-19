@@ -1,11 +1,13 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {getReviews} from '../../store/selectors.js';
 import {useState} from "react";
+import PropTypes from "prop-types";
 import {TransportPropType} from '../../types/types';
 import {calculateDifference} from '../../utils/date-difference';
 import FormReviewModal from "../form-review-modal/form-review-modal";
 import ReviewRating from './review-rating';
-const TabReviews = ({reviewsData}) => {
-  const {reviews} = reviewsData;
+const TabReviews = ({reviews}) => {
   const bodyElement = document.querySelector(`body`);
   calculateDifference(reviews[0].date);
   const [isModalOpened, setIsModalOpened] = useState(false);
@@ -55,6 +57,13 @@ const TabReviews = ({reviewsData}) => {
 };
 
 TabReviews.propTypes = {
-  reviewsData: TransportPropType
+  reviews: PropTypes.arrayOf(TransportPropType).isRequired,
 };
-export default TabReviews;
+
+
+const mapStateToProps = (state) => ({
+  reviews: getReviews(state),
+});
+
+
+export default connect(mapStateToProps, null)(TabReviews);

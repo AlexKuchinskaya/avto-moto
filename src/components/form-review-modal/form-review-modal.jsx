@@ -1,10 +1,10 @@
 import {useEffect, useRef, useState} from "react";
 import {connect} from 'react-redux';
-import {addReview} from "../../store/action";
 import React from 'react';
 import PropTypes from 'prop-types';
 import FormRating from "../form-rating/form-rating";
-const FormReviewModal = ({closeModal}) => {
+import {addReview} from '../../store/action';
+const FormReviewModal = ({closeModal, onSubmitFormReview}) => {
   let userData;
   const ESC_KEY = `Escape`;
   const initialFormState = {
@@ -52,7 +52,6 @@ const FormReviewModal = ({closeModal}) => {
       evt.key === ` ` ||
       evt.key === `Spacebar`;
     if (enterOrSpace) {
-      console.log(`evt.target.value`, evt.target);
       handleFormRatingInput(evt);
     }
   };
@@ -67,7 +66,7 @@ const FormReviewModal = ({closeModal}) => {
     }
 
     if (currentFormState.user.length !== 0 && currentFormState.comment.length !== 0) {
-      addReview(currentFormState);
+      onSubmitFormReview(currentFormState);
       setCurrentFormState({
         ...initialFormState,
       });
@@ -195,10 +194,25 @@ const FormReviewModal = ({closeModal}) => {
     </div>
   );
 };
+// const mapStateToProps = (state) => ({
+//   userName: state.newReview.userName,
+//   worth: state.newReview.worth,
+//   limitations: state.newReview.limitations,
+//   rating: state.newReview.rating,
+//   comment: state.newReview.comment,
+//   dateTime: state.newReview.datetime
+// });
+const mapDispatchToProps = (dispatch) => ({
+  onSubmitFormReview(reviewData) {
+    dispatch(addReview(reviewData));
+  }
+});
 
 FormReviewModal.propTypes = {
   closeModal: PropTypes.func.isRequired,
+  onSubmitFormReview: PropTypes.func.isRequired,
+
 };
 
 export {FormReviewModal};
-export default connect(null, null)(FormReviewModal);
+export default connect(null, mapDispatchToProps)(FormReviewModal);

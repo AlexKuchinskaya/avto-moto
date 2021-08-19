@@ -1,7 +1,8 @@
+import {TRANSPORT} from "../components/mocks/mock";
 import {ActionType} from "./action";
 
 const initialState = {
-  reviews: []
+  reviews: TRANSPORT.reviews
 };
 
 const reducer = (state = initialState, action) => {
