@@ -2,9 +2,6 @@
     display: flex;
     align-items: center;
 }
-// .rating__input {
-//     display: none;
-// }
 
 .rating__container {
     margin-right: 8px;
@@ -13,6 +10,10 @@
     }
     &:hover {
         cursor: pointer;
+        cursor: hand;
+    }
+    &:focus-within {
+        outline: 3px auto blue;
     }
 }
 .rating__label {

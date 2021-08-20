@@ -1,4 +1,12 @@
 import PropTypes from 'prop-types';
+export const TransportReviews = PropTypes.arrayOf(PropTypes.shape({
+  user: PropTypes.string.isRequired,
+  pros: PropTypes.string.isRequired,
+  cons: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  comment: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired
+}));
 export const TransportPropType = PropTypes.shape({
   id: PropTypes.number.isRequired,
   pictures: PropTypes.arrayOf(PropTypes.shape({
@@ -21,12 +29,5 @@ export const TransportPropType = PropTypes.shape({
     name: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
   })),
-  reviews: PropTypes.arrayOf(PropTypes.shape({
-    user: PropTypes.string.isRequired,
-    pros: PropTypes.string.isRequired,
-    cons: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    comment: PropTypes.string.isRequired,
-    date: PropTypes.string.isRequired
-  }))
+  reviews: TransportReviews
 });

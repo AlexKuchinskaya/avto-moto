@@ -2,8 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {getReviews} from '../../store/selectors.js';
 import {useState} from "react";
-import PropTypes from "prop-types";
-import {TransportPropType} from '../../types/types';
+// import PropTypes from "prop-types";
+import {TransportReviews} from '../../types/types';
 import {calculateDifference} from '../../utils/date-difference';
 import FormReviewModal from "../form-review-modal/form-review-modal";
 import ReviewRating from './review-rating';
@@ -57,7 +57,7 @@ const TabReviews = ({reviews}) => {
 };
 
 TabReviews.propTypes = {
-  reviews: PropTypes.arrayOf(TransportPropType).isRequired,
+  reviews: TransportReviews,
 };
 
 
